@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Auth\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,4 @@ Route::get('/', function () {
 Route::get('/admin/{name}', function ($name) {
     return "Welcome to admin user routes. Your name $name";
 });
+Route::post('/auth/login', [AuthController::class, 'admin_login']);
